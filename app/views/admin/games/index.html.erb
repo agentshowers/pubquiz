@@ -1,0 +1,17 @@
+<h1>Games</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Time to reply</th>
+    <th>Created At</th>
+  </tr>
+ 
+  <% @games.each do |game| %>
+    <tr>
+      <td><%= game.name %></td>
+      <td><%= game.time_to_reply %></td>
+      <td><%= game.created_at %></td>
+    </tr>
+  <% end %>
+</table>
