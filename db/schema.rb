@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_140423) do
+ActiveRecord::Schema.define(version: 2020_04_19_142519) do
 
   create_table "games", force: :cascade do |t|
     t.string "name", null: false
     t.integer "time_to_reply", default: 10, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "question", limit: 255, null: false
+    t.text "answers", null: false
+    t.integer "correct_answer", null: false
+    t.integer "game_id", default: 0, null: false
   end
 
 end
